@@ -27,3 +27,9 @@ jobs:
         name: playwright-report
         path: reports/playwright-report/
         retention-days: 30
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-json
+        path: result.json
+        retention-days: 30

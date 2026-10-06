@@ -24,9 +24,8 @@ const zephyrReportPath = path.join(zephyrDir, 'zephyr-results.json'); // absolut
 // --------------------
 const reporters: any[] = [
   //['list'],
-  //['json', { outputFile: 'result.json' }],
+  ['json', { outputFile: 'result.json' }],
   ['html', { open: 'always', outputFolder: reportDir }],
-  ['allure-playwright'],
 ];
 
 
