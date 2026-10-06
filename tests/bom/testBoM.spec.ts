@@ -22,7 +22,7 @@ test.describe("Testing different Type of BoM import in Sync Mode", () => {
     const excel = getExcelData(TEST_DATA_PATH, getRequiredEnv("BOM_IMPORT_SHEET_NAME"));
     const rows = excel.getColumn('Test').length;
 
-    for (let rowNumber = 1; rowNumber <= rows; rowNumber++){ //add
+    for (let rowNumber = 1; rowNumber <= rows; rowNumber++){ //addss
         // Read data for each test case row
         
         const allErrors: string[] = [];
