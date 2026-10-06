@@ -1,0 +1,44 @@
+{
+  "shortSku": "AB",
+  "result": {
+    "hits": [
+      {
+        "sel": "[class*=\"Error\"]",
+        "text": "×Sorry to interruptCSS ErrorRefresh",
+        "tag": "DIV",
+        "className": "auraErrorBox",
+        "id": "auraError"
+      },
+      {
+        "sel": "[aria-describedby]",
+        "text": "×Sorry to interruptCSS ErrorRefresh",
+        "tag": "DIV",
+        "className": "auraErrorBox",
+        "id": "auraError"
+      }
+    ],
+    "snippet": "at least 3 characters or leave empty to search all SKUs. *Cisco Portfolio All Portfolios *Geography (Services only) All "
+  },
+  "locatorTexts": [
+    {
+      "i": 0,
+      "visible": true,
+      "text": "Cisco SKU Enter at least 3 characters or leave empty to search all SKUs."
+    },
+    {
+      "i": 1,
+      "visible": true,
+      "text": "Cisco SKU Enter at least 3 characters or leave empty to search all SKUs."
+    },
+    {
+      "i": 4,
+      "visible": true,
+      "text": "Format: Dec 31, 2024"
+    },
+    {
+      "i": 0,
+      "visible": true,
+      "text": "Cisco SKU Enter at least 3 characters or leave empty to search all SKUs."
+    }
+  ]
+}

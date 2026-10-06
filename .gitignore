@@ -1,0 +1,65 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Playwright specific
+playwright-report/
+test-results/
+reports/
+trace.zip
+*.png
+*.webm
+*.mp4
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.testRecords.env
+
+# Logs
+logs/
+*.log
+
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+tests/bom/testexperiments.spec.ts
+services/experiment-service.ts
+
+# Experiment files
+*/experiments/
+testnew.spec.ts
+
+# jsons
+results.json
+state.chromium.json
+
+# reports
+/allure-report/
+/allure-results/
+
+# Playwright
+/playwright/.auth/
+
+# Local authentication/session state
+auth/storageState.json
+
+# Temporary investigation/debug files
+.tmp-query-counts.ts
+.tmp-t3924-diagnose.ts
+.tmp-t3924-inspect.ts
+
+# Local Salesforce data exports
+00DDN0000000SQ6.json
+00DTA000009a9Qz.json
+00DWr00000Bql69.json
+00Dbn00000SB7HN.json
+
+# Local generated JSON/results
+list-out.json
+result.json
+testslist.json

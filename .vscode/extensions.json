@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "davidanson.vscode-markdownlint",
+        "gruntfuggly.todo-tree",
+        "ms-playwright.playwright",
+        "redhat.java",
+    ]
+}

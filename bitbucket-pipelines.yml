@@ -1,0 +1,16 @@
+definitions:
+  imports:
+    playwright-ci: ci-automation:ciDefinition:.bitbucket/release/playwright-pipelines.yml
+
+pipelines:
+  custom:
+
+    runPlayWrightWithTestSelection: # Playwright Tests | Run UI automation tests
+      import: runPlaywrightTests@playwright-ci
+
+    runPlayWrightWithTagSelection: # PlayWright JS tests with TAG selection | Run UI automation tests--
+      import : runPlaywrightTests@playwright-ci
+
+
+    runPlayWrightWithFailedTests: # Rerun failed test case
+      import : runPlaywrightTests@playwright-ci

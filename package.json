@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "@types/jsforce": "^1.11.5",
+    "@types/lodash": "^4.17.23",
+    "@types/node": "^22.19.18",
+    "@types/xlsx": "^0.0.35",
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^3.4.4",
+    "playwright-zephyr": "^1.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "jsforce": "^3.9.1",
+    "package.json": "^2.0.1",
+    "xlsx": "^0.18.5"
+  },
+"scripts": {}
+}

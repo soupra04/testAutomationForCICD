@@ -1,0 +1,19 @@
+{
+  "playwright.reuseBrowser": true,
+  "playwright.showTrace": false,
+  "playwright.workspaceSettings": {
+    "configs": [
+      {
+        "relativeConfigFile": "playwright.config.ts",
+        "selected": true,
+        "enabled": true,
+        "projects": [
+          {
+            "name": "chromium",
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  }
+}
