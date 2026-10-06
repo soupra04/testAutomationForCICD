@@ -12,12 +12,6 @@ test.describe('Test File for CICD', () => {
         } else {
             checkboxes.nth(0).check();
         }
-        await page.pause();
-    
-    
-    
-    
-    
     });
     
     test('drag and drop columns', async ({ page }) => {

@@ -6,6 +6,11 @@ import { libs, globalVars } from "../../libs/lib"; //
 import { hydrateSfVarsIntoProcessEnv, normalizeSfEnvUrls } from "../../utils/envConfig";
 
 export default async function globalSetup(config: FullConfig) {
+    if (process.env.SKIP_SF_GLOBAL_SETUP === 'true') {
+        console.log('⏭️ SKIP_SF_GLOBAL_SETUP=true — skipping Salesforce global setup');
+        return;
+    }
+
     dotenv.config();
     hydrateSfVarsIntoProcessEnv();
     normalizeSfEnvUrls();

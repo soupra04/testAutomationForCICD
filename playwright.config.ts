@@ -43,6 +43,8 @@ if (process.env.ENABLE_ZEPHYR === 'true') {   // need to add ENABLE_ZEPHYR field
   ]);
 }
 
+const skipSfGlobalSetup = process.env.SKIP_SF_GLOBAL_SETUP === 'true';
+
 // --------------------
 // EXISTING CONFIG (unchanged)
 // --------------------
@@ -56,10 +58,10 @@ export default defineConfig({
 
   reporter: reporters,
 
-  globalSetup: './integration/sf/globalSetup',
+  globalSetup: skipSfGlobalSetup ? undefined : './integration/sf/globalSetup',
 
   use: {
-    storageState: 'state.chromium.json',
+    ...(skipSfGlobalSetup ? {} : { storageState: 'state.chromium.json' }),
     baseURL: process.env.SF_INSTANCE_URL,
 
     headless: process.env.CI ? true : false,
