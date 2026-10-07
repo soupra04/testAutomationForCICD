@@ -8,9 +8,13 @@ import { hydrateSfVarsIntoProcessEnv, normalizeSfEnvUrls } from './utils/envConf
 hydrateSfVarsIntoProcessEnv();
 normalizeSfEnvUrls();
 
-// Create timestamped report folder for HTML reports
+// Jenkins / CI: fixed folder so Publish HTML reports finds index.html at the publish root.
+// Local runs: timestamped subfolders so history is kept on disk.
+const isAutomationRun = !!(process.env.CI || process.env.JENKINS_URL);
 const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-const reportDir = path.join('reports/playwright-report', `report-${timestamp}`);
+const reportDir = isAutomationRun
+  ? path.join('reports', 'playwright-report')
+  : path.join('reports/playwright-report', `report-${timestamp}`);
 
 // Ensure Zephyr report folder exists
 const zephyrDir = path.resolve(__dirname, 'reports', 'zephyr'); // absolute folder
@@ -25,7 +29,7 @@ const zephyrReportPath = path.join(zephyrDir, 'zephyr-results.json'); // absolut
 const reporters: any[] = [
   //['list'],
   ['json', { outputFile: 'result.json' }],
-  ['html', { open: 'always', outputFolder: reportDir }],
+  ['html', { open: isAutomationRun ? 'never' : 'always', outputFolder: reportDir }],
 ];
 
 
