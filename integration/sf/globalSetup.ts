@@ -1,9 +1,12 @@
 // global-setup.ts
 import dotenv from "dotenv";
 import { execSync } from "child_process";
+import path from "path";
 import { chromium, FullConfig } from "@playwright/test";
 import { libs, globalVars } from "../../libs/lib"; //
 import { hydrateSfVarsIntoProcessEnv, normalizeSfEnvUrls } from "../../utils/envConfig";
+
+const projectRoot = path.resolve(__dirname, "../..");
 
 export default async function globalSetup(config: FullConfig) {
     if (process.env.SKIP_SF_GLOBAL_SETUP === 'true') {
@@ -21,8 +24,10 @@ export default async function globalSetup(config: FullConfig) {
     if (!process.env.SF_SESSION_ID) {
         console.log("⚡ No SF_SESSION_ID found. Fetching via fetch-sid.js...");
 
-        execSync("npx ts-node fetch-sid.ts", {
-            stdio: "inherit"
+        execSync("npx ts-node --project tsconfig.json fetch-sid.ts", {
+            stdio: "inherit",
+            cwd: projectRoot,
+            env: process.env,
         });
         dotenv.config(); // reload env
     }
